@@ -20,14 +20,37 @@ header {
   height: 64px;
 }
 
+h1{
+  font-size: 32px;
+}
+
 h2{
   margin-block-start: 0.0em;
   margin-block-end: 0.0em;
-    
+  font-size: 20px;
 }
 
+h4{
+    padding: 6px;
+  }
+
 p{
-  color:#dadada;
+  color:#dddddd;
+  margin: 0;
+  padding: 6px;
+}
+
+strong{
+  color: #ffffff;
+  padding: 6px;
+}
+
+.price{
+   color: rgb(38, 255, 0);
+}
+
+.price_value{
+  color: rgb(38, 255, 0);
 }
 
 .book_container {
@@ -35,20 +58,28 @@ p{
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  background-color: #e0f5fc;
+  background: #5f97ad;
+  background: linear-gradient(0deg, rgba(95, 151, 173, 1) 0%, rgba(224, 245, 252, 1) 100%);
 }
 
 .book_card {
-  background-color: #003f5c;
+  background: #003F5C;
+  background: linear-gradient(0deg, rgba(0, 63, 92, 1) 0%, rgba(5, 120, 173, 1) 99%);
   border-radius: 10px;
   padding: 20px;
   margin: 15px;
   width: 280px;
+  box-shadow: 0px 4px 7px rgb(0, 0, 0);
 }
 
 .bookPNG{
+  border-radius: 10px;
   width: 280px;
   height: auto;
+  box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+  background-color: #e0f5fc;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .priceLike{
@@ -76,7 +107,20 @@ p{
   background-color: rgba(255, 0, 0, 0.1);
 }
 
+
+.author_sec{
+  box-shadow: 1px 4px 7px black;
+  border-radius: 6px;
+  padding-left: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #007ab6cd;
+}
+
 .comments {
+  box-shadow: 0px 4px 7px rgb(0, 0, 0);
   padding: 6px;
   max-height: 220px;
   overflow-y: auto;
@@ -99,6 +143,7 @@ p{
 
 .commenter{
   color: #ffffff;
+  padding: 0;
 }
 
 .comments_inputs {
@@ -113,8 +158,10 @@ p{
   color: white;     
   font-size: 14px;               
   transition: border-color 0.3s ease, background-color 0.3s ease;
-  outline: none;                  
+  outline: none;
+  box-shadow: 0px 2px 7px rgb(0,0,0,0.5);
 }
+
 
 .comments_inputs::placeholder{
   color: rgb(190, 190, 190);
@@ -129,12 +176,14 @@ p{
 .send_BTN{
   width: 100%;
   border-radius: 6px;
+  margin-top: 8px;
   border-style: solid;
   border-color: #0088cc;
   outline: none;
   font-weight: bold;
   color: #ffffff;
   background-color: #00aaff6e;
+  box-shadow: 0px 2px 7px rgb(0,0,0,0.5);
 }
 
 .send_BTN:hover{
@@ -150,4 +199,85 @@ footer{
   height: 100px;
   width: 100wh;
   background-color: #001f2f;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 72px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: rgb(190, 190, 190);
+}
+
+a:active{
+  opacity: 0.5;
+}
+
+@media (max-width:580px){
+  .header{
+    flex-direction: column;
+  }
+
+  .h1{
+    font-size: 28px;
+  }
+
+  footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+}
+}
+
+@media (max-width:512px){
+
+  .h1{
+    font-size: 26px;
+  }
+}
+
+@media (max-width:424px){
+
+  .h1{
+    font-size: 24px;
+  }
+}
+
+@media (max-width:372px){
+
+  h1{
+    font-size: 22px;
+  }
+
+  h2{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  
+
+strong{
+  padding: 0;
+}
+
+  .priceLike{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book_card{
+    width: 240px;
+  }
+
+  .bookPNG{
+    width: 100%;
+  }
+
 }
