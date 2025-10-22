@@ -6,9 +6,18 @@ body {
 }
 
 header {
-  background-color: #002a3e;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  background-color: #002a3f; 
+  padding: 20px 0px;
+  gap: 12px;
+}
+
+.logo{
+  width: 64px;
+  height: 64px;
 }
 
 h2{
@@ -26,6 +35,7 @@ p{
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
+  background-color: #e0f5fc;
 }
 
 .book_card {
@@ -89,4 +99,55 @@ p{
 
 .commenter{
   color: #ffffff;
+}
+
+.comments_inputs {
+  width: 100%;  
+  margin-top: 8px;
+  margin-bottom: 8px;             
+  box-sizing: border-box;        
+  border-radius: 6px;             
+  padding: 4px 6px;              
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color:rgba(255, 255, 255, 0.1) ;
+  color: white;     
+  font-size: 14px;               
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;                  
+}
+
+.comments_inputs::placeholder{
+  color: rgb(190, 190, 190);
+}
+
+.comments_inputs:focus {
+  border-color: #00aaff;
+  background-color: rgba(0, 170, 255, 0.15); 
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.4); 
+}
+
+.send_BTN{
+  width: 100%;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #0088cc;
+  outline: none;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #00aaff6e;
+}
+
+.send_BTN:hover{
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+}
+
+.send_BTN:active{
+  background-color: #00aaff65;
+}
+
+footer{
+  height: 100px;
+  width: 100wh;
+  background-color: #001f2f;
 }

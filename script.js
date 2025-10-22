@@ -1,12 +1,38 @@
 function init() {
   renderBooks();
 }
+  function getCardHTML(book, i, commentsHtml){
+      return `
+        <h2>${book.name}</h2>
+        <img class="bookPNG" src="./assets/Book_png.png" alt="book" />
+        <div class="priceLike">
+          <p><strong>Preis:</strong> ${book.price.toFixed(2)} €</p>
+          <p>
+            <span class="like_BTN ${book.liked ? 'liked' : ''}" onclick="toggleLike(${i})" id="like-${i}">
+              ❤️ ${book.likes}
+            </span>
+          </p>
+        </div>
+        <p><strong>Autor:</strong> ${book.author}</p>
+        <p><strong>Erscheinungsjahr:</strong> ${book.publishedYear}</p>
+        <p><strong>Genre:</strong> ${book.genre}</p>
+        <div class="comments">
+          <h4>Kommentare:</h4>
+          ${commentsHtml}
+        </div>
+        <div class="comment-section">
+          <input class="comments_inputs" type="text" placeholder="Dein Name" id="name-${i}">
+          <input class="comments_inputs" type="text" placeholder="Schreibe dein Kommentar..." id="comment-${i}">
+          <button class="send_BTN" onclick="addComment(${i})">Senden</button>
+        </div>
+        `
+    }
 
 function renderBooks() {
   var container = document.getElementById('bookContainer');
   container.innerHTML = '';
 
-  for (var i = 0; i < books.length; i++) {
+  for (var i = 0; i < books.length - 1; i++) {
     var book = books[i];
 
     var card = document.createElement('div');
@@ -18,34 +44,12 @@ function renderBooks() {
       commentsHtml += '<p><strong class="commenter">' + comment.name + '</strong>: ' + comment.comment + '</p>';
     }
 
-    card.innerHTML = `
-      <h2>${book.name}</h2>
-      <img class="bookPNG" src="./assets/Book_png.png" alt="book" />
-      <div class="priceLike">
-        <p><strong>Preis:</strong> ${book.price.toFixed(2)} €</p>
-        <p>
-          <span class="like_BTN ${book.liked ? 'liked' : ''}" onclick="toggleLike(${i})" id="like-${i}">
-          ❤️ ${book.likes}
-          </span>
-        </p>
-      </div>
-      <p><strong>Autor:</strong> ${book.author}</p>
-      <p><strong>Erscheinungsjahr:</strong> ${book.publishedYear}</p>
-      <p><strong>Genre:</strong> ${book.genre}</p>
-      <div class="comments">
-        <h4>Kommentare:</h4>
-        ${commentsHtml}
-      </div>
-      <div class="comment-section">
-        <input type="text" placeholder="Dein Name" id="name-${i}">
-        <input type="text" placeholder="Schreibe dein Kommentar..." id="comment-${i}">
-        <button onclick="addComment(${i})">Senden</button>
-      </div>
-    `;
-
+    card.innerHTML = getCardHTML(book, i, commentsHtml);
     container.appendChild(card);
   }
 }
+
+
 
 function toggleLike(index) {
   var book = books[index];
