@@ -23,7 +23,7 @@ function getCardHTML(book, i, commentsHtml, commentsTitle) {
       <p><strong>Genre:</strong> ${book.genre}</p>
     </div>
 
-    <div class="comments">
+    <div class="comments overflow-y: auto" tabindex="0"">
       <h4>${commentsTitle}</h4>
       ${commentsHtml}
     </div>
