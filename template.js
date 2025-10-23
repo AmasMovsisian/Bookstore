@@ -9,10 +9,10 @@ function getCardHTML(book, i, commentsHtml, commentsTitle) {
       </p>
       <p>
         <span 
-          class="like_BTN ${book.liked ? 'liked' : ''}" 
+          class="like_BTN ${book.liked ? "liked" : ""}" 
           onclick="toggleLike(${i})" 
           id="like-${i}">
-          ${book.liked ? '❤️' : '♡'} ${book.likes}
+          ${book.liked ? "❤️" : "♡"} ${book.likes}
         </span>
       </p>
     </div>
@@ -36,8 +36,8 @@ function getCardHTML(book, i, commentsHtml, commentsTitle) {
   `;
 }
 
-function getHTMLComments(comment){
-        return `
+function getHTMLComments(comment) {
+  return `
         <p>
           <strong class="commenter">${comment.name}</strong><br>
           ${comment.comment}<br><br>
